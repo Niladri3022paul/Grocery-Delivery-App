@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <h1>Checkout</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="address" class="form-label">Delivery Address</label>
+            <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success btn-lg">Place Order</button>
+        <a href="{% url 'cart' %}" class="btn btn-secondary">Back to Cart</a>
+    </form>
+</div>
+{% endblock %}
